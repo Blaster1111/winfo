@@ -1,5 +1,5 @@
 import 'dart:typed_data';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
 
@@ -34,14 +34,24 @@ class _ContactDisplayState extends State<ContactDisplay> {
         appBar: AppBar(
           title: const Text(
             "Your Contacts",
-            style: TextStyle(color: Colors.blue),
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           centerTitle: true,
           backgroundColor: Colors.transparent,
-          elevation: 0,
+          elevation: 2,
         ),
         body: (contacts) == null
-            ? Center(child: CircularProgressIndicator())
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                  Text('Please allow permissions in settings'),
+                ],
+              )
             : ListView.builder(
                 itemCount: contacts!.length,
                 itemBuilder: (BuildContext context, int index) {
