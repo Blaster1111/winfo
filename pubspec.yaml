@@ -14,8 +14,9 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^1.1.0
-  contacts_service: ^0.6.3
+  flutter_contacts:
   permission_handler: ^10.4.3
+ 
   
 
 
