@@ -12,6 +12,8 @@ class ContactDisplay extends StatefulWidget {
 
 class _ContactDisplayState extends State<ContactDisplay> {
   List<Contact>? contacts;
+
+  String? Number, Name;
   @override
   void initState() {
     // TODO: implement initState
@@ -23,7 +25,7 @@ class _ContactDisplayState extends State<ContactDisplay> {
     if (await FlutterContacts.requestPermission()) {
       contacts = await FlutterContacts.getContacts(
           withProperties: true, withPhoto: true);
-      print(contacts);
+
       setState(() {});
     }
   }
@@ -66,7 +68,9 @@ class _ContactDisplayState extends State<ContactDisplay> {
                       title: Text(
                           "${contacts![index].name.first} ${contacts![index].name.last}"),
                       subtitle: Text(num),
-                      onTap: () {});
+                      onTap: () {
+                        Navigator.pushNamed(context, "/contacts_cards");
+                      });
                 },
               ));
   }

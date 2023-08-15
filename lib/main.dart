@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:winfo/activities/contacts_cards.dart';
 // ignore: unused_import
 import 'activities/contacts_display.dart';
 // ignore: unused_import
@@ -14,6 +15,7 @@ void main() {
       "/": (context) => Loading(),
       "/loading": (context) => Loading(),
       "/contacts_display": (context) => ContactDisplay(),
+      "/contacts_cards": (context) => ContactsCards(),
     },
   ));
 }
