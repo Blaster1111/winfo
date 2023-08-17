@@ -46,13 +46,15 @@ class _ContactDisplayState extends State<ContactDisplay> {
           elevation: 2,
         ),
         body: (contacts) == null
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(),
-                  Text('Please allow permissions in settings'),
-                ],
+            ? Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircularProgressIndicator(),
+                    Text('Please wait...'),
+                  ],
+                ),
               )
             : ListView.builder(
                 itemCount: contacts!.length,

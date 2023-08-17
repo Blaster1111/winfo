@@ -16,6 +16,7 @@ dependencies:
   http: ^1.1.0
   flutter_contacts:
   permission_handler: ^10.4.3
+  url_launcher: 
  
   
 
