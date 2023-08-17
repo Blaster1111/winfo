@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
+import 'package:winfo/activities/contacts_cards.dart';
 
 class ContactDisplay extends StatefulWidget {
   const ContactDisplay({super.key});
@@ -13,7 +14,6 @@ class ContactDisplay extends StatefulWidget {
 class _ContactDisplayState extends State<ContactDisplay> {
   List<Contact>? contacts;
 
-  String? Number, Name;
   @override
   void initState() {
     // TODO: implement initState
@@ -69,7 +69,16 @@ class _ContactDisplayState extends State<ContactDisplay> {
                           "${contacts![index].name.first} ${contacts![index].name.last}"),
                       subtitle: Text(num),
                       onTap: () {
-                        Navigator.pushNamed(context, "/contacts_cards");
+                        Navigator.pushNamed(
+                          context,
+                          "/contacts_cards",
+                          arguments: ContactsCards(
+                            name: contacts![index].displayName,
+                            number: (contacts![index].phones.isNotEmpty)
+                                ? (contacts![index].phones.first.number)
+                                : "--",
+                          ),
+                        );
                       });
                 },
               ));

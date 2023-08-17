@@ -15,7 +15,10 @@ void main() {
       "/": (context) => Loading(),
       "/loading": (context) => Loading(),
       "/contacts_display": (context) => ContactDisplay(),
-      "/contacts_cards": (context) => ContactsCards(),
+      "/contacts_cards": (context) => ContactsCards(
+            name: '',
+            number: '',
+          ),
     },
   ));
 }
