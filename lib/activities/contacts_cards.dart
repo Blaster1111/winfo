@@ -63,16 +63,26 @@ class _ContactsCardsState extends State<ContactsCards> {
               SizedBox(
                 height: 50,
               ),
-              TextButton(
-                onPressed: () {
-                  launch('tel: ${args.number}');
-                },
-                child: Text(
-                  'Call',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      launch('tel: ${args.number}');
+                    },
+                    child: Text(
+                      'Call',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                ),
+                  TextButton(
+                    onPressed: () {
+                      launch("https://wa.me/${args.number}");
+                    },
+                    child: Icon(Icons.message_outlined),
+                  )
+                ],
               ),
             ],
           ),
