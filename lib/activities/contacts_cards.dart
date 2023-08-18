@@ -21,7 +21,18 @@ class _ContactsCardsState extends State<ContactsCards> {
     final ContactsCards args =
         ModalRoute.of(context)!.settings.arguments as ContactsCards;
     return Scaffold(
-      appBar: AppBar(title: Text('Contact Details')),
+      appBar: AppBar(
+        title: const Text(
+          "Contact Details",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 2,
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -75,6 +86,9 @@ class _ContactsCardsState extends State<ContactsCards> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 15,
                   ),
                   TextButton(
                     onPressed: () {

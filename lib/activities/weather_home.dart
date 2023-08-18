@@ -59,6 +59,18 @@ class _WeatherHomeState extends State<WeatherHome> {
 
     return Scaffold(
       //UI Starts
+      appBar: AppBar(
+        title: const Text(
+          "Weather Forecast",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 2,
+      ),
       body: SafeArea(
           //Container for whole screen
           child: Container(
@@ -288,12 +300,6 @@ class _WeatherHomeState extends State<WeatherHome> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 8,
-            ),
-            FloatingActionButton(onPressed: () {
-              Navigator.pushNamed(context, "/contacts_display");
-            }),
           ],
         ),
       )),
