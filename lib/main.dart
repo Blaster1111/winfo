@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:winfo/activities/contacts_cards.dart';
 import 'package:winfo/home.dart';
 // ignore: unused_import
@@ -20,6 +21,7 @@ void main() {
             name: '',
             number: '',
           ),
+      "home_page": (context) => HomePage(),
     },
   ));
 }

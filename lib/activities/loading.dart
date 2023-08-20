@@ -56,7 +56,12 @@ class _LoadingState extends State<Loading> {
     startApp(city);
     return Scaffold(
         body: Center(
-      child: Column(children: <Widget>[]),
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            CircularProgressIndicator(),
+            Text('Please wait...'),
+          ]),
     ));
   }
 }

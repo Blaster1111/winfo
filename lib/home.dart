@@ -82,6 +82,7 @@ class _HomePageState extends State<HomePage> {
                         fontStyle: FontStyle.italic,
                       ),
                     ),
+                    Padding(padding: EdgeInsets.all(50)),
                     SizedBox(
                       height: 30,
                     ),
