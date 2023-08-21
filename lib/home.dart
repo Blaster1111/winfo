@@ -64,41 +64,26 @@ class _HomePageState extends State<HomePage> {
                     fontStyle: FontStyle.italic,
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    FloatingActionButton(
-                      onPressed: () {},
-                      child: const Icon(Icons.person),
-                    ),
-                    Text(
-                      'Profile',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.all(50)),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    FloatingActionButton(
-                      onPressed: () {},
-                      child: const Icon(Icons.logout),
-                    ),
-                    Text(
-                      'Logout',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
-                  ],
+                SizedBox(
+                  height: 30,
+                ),
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "profile");
+                  },
+                  child: const Icon(Icons.person),
+                ),
+                Text(
+                  'Profile',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(50)),
+                SizedBox(
+                  height: 30,
                 ),
               ],
             ),
