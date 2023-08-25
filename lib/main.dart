@@ -13,7 +13,7 @@ void main() {
       // ignore: prefer_const_constructors
       "/home": (context) => WeatherHome(),
       // ignore: prefer_const_constructors
-      "/": (context) => LoginDetails(),
+      "/": (context) => HomePage(),
       "/home_page": (context) => HomePage(),
       "/loading": (context) => Loading(),
       "/contacts_display": (context) => ContactDisplay(),
