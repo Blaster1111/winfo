@@ -1,11 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:winfo/activities/Profile.dart';
 
-import 'package:winfo/home.dart';
-import 'package:get/get.dart';
 import 'package:winfo/main.dart';
 
 class LoginDetails extends StatefulWidget {
@@ -78,6 +74,10 @@ class _LoginDetailsState extends State<LoginDetails> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your phone number';
+                  } else if (value.length > 10 || value.length < 10) {
+                    return 'Invalid Phone Number';
+                  } else if (value == int.tryParse(value) is int) {
+                    return 'Invalid Phone Number';
                   }
                   // You can add more validation for phone numbers
                   return null;

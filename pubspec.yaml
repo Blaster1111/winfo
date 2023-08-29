@@ -18,7 +18,7 @@ dependencies:
   permission_handler: ^10.4.3
   url_launcher: 
   shared_preferences: ^2.2.0
-  get:
+  
   
 
 
