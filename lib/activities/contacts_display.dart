@@ -60,16 +60,12 @@ class _ContactDisplayState extends State<ContactDisplay> {
                 itemCount: contacts!.length,
                 itemBuilder: (BuildContext context, int index) {
                   Uint8List? image = contacts![index].photo;
-                  String num = (contacts![index].phones.isNotEmpty)
-                      ? (contacts![index].phones.first.number)
-                      : "--";
                   return ListTile(
                       leading: (contacts![index].photo == null)
                           ? const CircleAvatar(child: Icon(Icons.person))
                           : CircleAvatar(backgroundImage: MemoryImage(image!)),
                       title: Text(
                           "${contacts![index].name.first} ${contacts![index].name.last}"),
-                      subtitle: Text(num),
                       onTap: () {
                         Navigator.pushNamed(
                           context,

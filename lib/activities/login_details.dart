@@ -1,6 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:winfo/activities/Profile.dart';
+
+import 'package:winfo/home.dart';
+import 'package:get/get.dart';
 import 'package:winfo/main.dart';
 
 class LoginDetails extends StatefulWidget {
@@ -15,19 +20,21 @@ class _LoginDetailsState extends State<LoginDetails> {
   final _nameController = TextEditingController();
   final _ageController = TextEditingController();
   final _phoneNumberController = TextEditingController();
-  void _submitForm() {
+
+  void _submitForm() async {
     if (_formKey.currentState!.validate()) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Profile(
-            name: _nameController.text,
-            age: _ageController.text,
-            phoneNumber: _phoneNumberController.text,
-          ),
-        ),
-      );
+      SharedPreferences Prefs = await SharedPreferences.getInstance();
+      Prefs.setString('name', _nameController.text);
+      Prefs.setString('age', _ageController.text);
+      Prefs.setString('phone', _phoneNumberController.text);
+      Navigator.pushReplacementNamed(context, "/home_page",
+          arguments: Profile());
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -78,7 +85,9 @@ class _LoginDetailsState extends State<LoginDetails> {
               ),
               SizedBox(height: 24),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
+                  var SharedPref = await SharedPreferences.getInstance();
+                  SharedPref.setBool(SplashScreenState.KEYLOGIN, true);
                   _submitForm();
                 },
                 child: Text('Submit'),

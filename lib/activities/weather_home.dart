@@ -72,6 +72,7 @@ class _WeatherHomeState extends State<WeatherHome> {
         elevation: 2,
       ),
       body: SafeArea(
+
           //Container for whole screen
           child: Container(
         decoration: BoxDecoration(
@@ -293,13 +294,18 @@ class _WeatherHomeState extends State<WeatherHome> {
                               ),
                             )
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
                 ),
               ],
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/home_page");
+                },
+                child: Icon(Icons.arrow_back))
           ],
         ),
       )),
