@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:winfo/activities/login_details.dart';
+
 import 'package:winfo/main.dart';
 
 class Profile extends StatefulWidget {
