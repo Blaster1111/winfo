@@ -60,13 +60,12 @@ class SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.blueAccent,
-        child: Center(
-            child: Icon(
-          Icons.flutter_dash,
-          color: Colors.white,
-        )),
-      ),
+          color: Colors.blueAccent,
+          child: Center(
+              child: Icon(
+            Icons.flutter_dash,
+            size: 150,
+          ))),
     );
   }
 

@@ -23,8 +23,10 @@ class _LoginDetailsState extends State<LoginDetails> {
       Prefs.setString('name', _nameController.text);
       Prefs.setString('age', _ageController.text);
       Prefs.setString('phone', _phoneNumberController.text);
-      Navigator.pushReplacementNamed(context, "/home_page",
-          arguments: Profile());
+      Navigator.pushReplacementNamed(
+        context,
+        "/home_page",
+      );
     }
   }
 
@@ -36,17 +38,21 @@ class _LoginDetailsState extends State<LoginDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Personal Details')),
+      appBar: AppBar(title: Text('Login Details')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(labelText: 'Name'),
+                decoration: InputDecoration(
+                    labelText: 'Name',
+                    border:
+                        OutlineInputBorder(borderSide: BorderSide(width: 2))),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your name';
@@ -54,9 +60,15 @@ class _LoginDetailsState extends State<LoginDetails> {
                   return null;
                 },
               ),
+              SizedBox(
+                height: 15,
+              ),
               TextFormField(
                 controller: _ageController,
-                decoration: InputDecoration(labelText: 'Age'),
+                decoration: InputDecoration(
+                    labelText: 'Age',
+                    border:
+                        OutlineInputBorder(borderSide: BorderSide(width: 2))),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your age';
@@ -68,9 +80,15 @@ class _LoginDetailsState extends State<LoginDetails> {
                   return null;
                 },
               ),
+              SizedBox(
+                height: 15,
+              ),
               TextFormField(
                 controller: _phoneNumberController,
-                decoration: InputDecoration(labelText: 'Phone Number'),
+                decoration: InputDecoration(
+                  labelText: 'Phone Number',
+                  border: OutlineInputBorder(borderSide: BorderSide(width: 2)),
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your phone number';
@@ -79,11 +97,11 @@ class _LoginDetailsState extends State<LoginDetails> {
                   } else if (value == int.tryParse(value) is int) {
                     return 'Invalid Phone Number';
                   }
-                  // You can add more validation for phone numbers
+
                   return null;
                 },
               ),
-              SizedBox(height: 24),
+              SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () async {
                   var SharedPref = await SharedPreferences.getInstance();

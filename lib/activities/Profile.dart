@@ -38,10 +38,29 @@ class _ProfileState extends State<Profile> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text('Name: ${name}'),
-            Text('Age:  ${age}'),
-            Text('Phone Number: ${phone}'),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Name: ${name}',
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Age:  ${age}',
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Phone Number: ${phone}',
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+            ),
             SizedBox(
               height: 50,
             ),
@@ -49,8 +68,7 @@ class _ProfileState extends State<Profile> {
               onPressed: () async {
                 SharedPreferences Sp = await SharedPreferences.getInstance();
                 Sp.setBool(SplashScreenState.KEYLOGIN, false);
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: ((context) => LoginDetails())));
+                Navigator.pushReplacementNamed(context, "/login_details");
               },
               child: Text('Logout'),
             ),

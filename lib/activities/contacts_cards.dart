@@ -34,20 +34,9 @@ class _ContactsCardsState extends State<ContactsCards> {
         elevation: 2,
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color.fromARGB(234, 101, 110, 238),
-              Color.fromARGB(234, 114, 175, 232),
-              Color.fromARGB(234, 131, 204, 244),
-            ],
-          ),
-        ),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SafeArea(
@@ -56,25 +45,47 @@ class _ContactsCardsState extends State<ContactsCards> {
                   size: 200,
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
-                'Name: ${args.name}',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black, // Border color
+                    width: 2.0, // Border width
+                  ),
+                  borderRadius: BorderRadius.circular(8.0), // Border radius
+                ),
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'Name: ${args.name}',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-              Text(
-                'Number: ${args.number}',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
+              SizedBox(height: 10), // Add spacing between fields
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black, // Border color
+                    width: 2, // Border width
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                  // Border radius
+                ),
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'Number: ${args.number}',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               SizedBox(
                 height: 50,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
                     onPressed: () {
