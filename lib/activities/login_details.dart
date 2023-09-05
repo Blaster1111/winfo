@@ -46,6 +46,25 @@ class _LoginDetailsState extends State<LoginDetails> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SafeArea(
+                    child: Text(
+                      'Winfo',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
               TextFormField(
                 controller: _nameController,
                 decoration: InputDecoration(

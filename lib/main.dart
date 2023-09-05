@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:rotating_icon_button/rotating_icon_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:winfo/activities/Profile.dart';
 import 'package:winfo/activities/contacts_cards.dart';
@@ -59,14 +60,34 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          color: Colors.blueAccent,
-          child: Center(
-              child: Icon(
-            Icons.flutter_dash,
-            size: 150,
-          ))),
-    );
+        backgroundColor: Colors.blueAccent,
+        body: Center(
+          child: Container(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              RotatingIconButton(
+                onTap: () {},
+                background: Colors.blueAccent,
+                rotateType: RotateType.full,
+                child: Icon(
+                  Icons.flutter_dash,
+                  size: 150,
+                  color: Colors.black,
+                ),
+              ),
+              Text(
+                'Winfo',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic),
+              ),
+            ],
+          )),
+        ));
   }
 
   void whereToGo() async {
